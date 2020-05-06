@@ -5,6 +5,8 @@ public:
     virtual void render() const = 0;
 
     virtual void onClick(void (*f)()) = 0;
+
+    virtual ~Button() = default;
 };
 
 class WindowsButton : public Button {
@@ -34,6 +36,8 @@ public:
         okButton->onClick(closeDialog);
         okButton->render();
     }
+
+    virtual ~Dialog() = default;
 };
 
 class WindowsDialog : public Dialog {
